@@ -27,7 +27,7 @@ int main() {
         valor_anterior = valor_inicial;
         valor_inicial = valor_anterior - (f(valor_anterior) / df(valor_anterior));
 
-        erro = abs(valor_inicial-valor_anterior) / valor_inicial;
+        erro = abs(valor_inicial-valor_anterior) / abs(valor_inicial);
         printf("%lf\n", erro);
         if(erro < limite) break;
     }
