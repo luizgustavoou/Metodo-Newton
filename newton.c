@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
+#define MAX 30
 double f(double x) {
-    return x*x-x-2.0;
+    return 25.0*x*x+log(x);
 }
 
 double df(double x) {
@@ -13,18 +14,21 @@ double df(double x) {
     //return 2*x-1;
 }
 
-
 int main() {
-    int valor_anterior;
-    double valor_inicial=1.0;
-    double limite = pow(10, -4);
+    double valor_anterior = 0.0, valor_inicial= 0.1;
+
+    double limite = pow(10, -6);
     double erro;
 
+    int cont=0;
     while (1) {
+        cont++;
+        if (cont >= MAX) break;
         valor_anterior = valor_inicial;
         valor_inicial = valor_anterior - (f(valor_anterior) / df(valor_anterior));
 
         erro = abs(valor_inicial-valor_anterior) / valor_inicial;
+        printf("%lf\n", erro);
         if(erro < limite) break;
     }
 
