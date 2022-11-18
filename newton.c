@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define MAX 30
+#define MAX 101
 double f(double x) {
     return 25.0*x*x+log(x);
 }
@@ -15,7 +15,7 @@ double df(double x) {
 }
 
 int main() {
-    double valor_anterior = 0.0, valor_inicial= 0.1;
+    double valor_anterior = 0.0, valor_inicial= 0.2;
 
     double limite = pow(10, -6);
     double erro;
@@ -32,7 +32,7 @@ int main() {
         if(erro < limite) break;
     }
 
-    printf("Valor: %lf\n", valor_inicial);
+    printf("Raiz %lf -> F(%lf) = %lf\n", valor_inicial, valor_inicial, f(valor_inicial));
 
     return 0;
 }
