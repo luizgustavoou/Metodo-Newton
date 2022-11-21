@@ -3,19 +3,18 @@
 
 #define MAX 101
 double f(double x) {
-    return 25.0*x*x+log(x);
+    return 0.9-(1+x+(x*x)/2)*exp(-x);
 }
 
 double df(double x) {
     //Outra forma por meio da aproximação de h muito próximo de 0 :
-    const double h = 0.0001;
-    return ((f(x+h)-f(x))/h);
+    // return ((f(x+h)-f(x))/h);
 
-    //return 2*x-1;
+    return exp(-x)*(x*x)/2;
 }
 
 int main() {
-    double valor_anterior = 0.0, valor_inicial= 0.2;
+    double valor_anterior = 0.0, valor_inicial= 1.1;
 
     double limite = pow(10, -6);
     double erro;
