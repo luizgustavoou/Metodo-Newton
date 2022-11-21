@@ -4,3 +4,7 @@ Em análise numérica, o método de Newton, desenvolvido por Isaac Newton e Jose
 1) Node
 > npm install mathjs </br>
 > node newton.js
+
+OBS:
+Chute inicial para a função fa: 1.1
+Chute inicial para a função fb: 5.1
