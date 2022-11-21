@@ -9,8 +9,16 @@ function dfa(x) {
   return pow(e, -x)*(x*x)/2;
 }
 
-function rootFA() {
-  let x = 0.0, xn= 1;
+function fb(x) {
+    return 0.1-(1+x+(x*x)/2)*pow(e, -x);
+}
+
+function dfb(x) {
+    return pow(e, -x)*(x*x)/2;
+}
+
+function rootFunction(start_value, f, df, func) {
+  let x = 0, xn= start_value;
 
   let limit = pow(10, -6);
   let error;
@@ -20,13 +28,14 @@ function rootFA() {
       cont++;
       if (cont >= MAX) break;
       x = xn;
-      xn = x - (fa(x) / dfa(x));
+      xn = x - (f(x) / df(x));
 
       error = abs(xn-x) / abs(xn);
       if(error < limit) break;
   }
 
-  console.log(`Raiz de fa ${xn} -> Fa(${xn}) = ${round(fa(xn))}`);
+  console.log(`Raiz da função ${func} -> F(${xn}) = ${round(f(xn))}`);
 }
 
-rootFA();
+rootFunction(1, fa, dfa, "0.9-(1+x+x²/2)*e^(-x)");
+rootFunction(5.1, fb, dfb, "0.1-(1+x+x²/2)*e^(-x)");
