@@ -3,3 +3,4 @@ Em análise numérica, o método de Newton, desenvolvido por Isaac Newton e Jose
 
 1) Node
 >> npm install mathjs
+>> node newton.js
