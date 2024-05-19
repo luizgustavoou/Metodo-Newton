@@ -1,10 +1,14 @@
-# Metodo-Newton
-Em análise numérica, o método de Newton, desenvolvido por Isaac Newton e Joseph Raphson, tem o objetivo de estimar as raízes de uma função. Para isso, escolhe-se uma aproximação inicial para esta.
+# Newton's Method
+In numerical analysis, Newton's method, developed by Isaac Newton and Joseph Raphson, aims to estimate the roots of a function. An initial approximation is chosen for this purpose.
 
-1) Node
-> npm install mathjs </br>
-> node newton.js
+## Steps:
 
-OBS:
-Chute inicial para a função fa: 1.1
-Chute inicial para a função fb: 5.1
+1. **Node**
+   ```bash
+   npm install mathjs
+   node newton.js
+   ```
+
+   **Note:**
+   Initial guess for function fa: 1.1
+   Initial guess for function fb: 5.1
